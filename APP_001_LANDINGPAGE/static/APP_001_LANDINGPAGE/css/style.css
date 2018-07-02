@@ -1,3 +1,20 @@
-h1 {
-    color: #777777;
+.navbar-brand {
+    font-family: 'Montserrat', sans-serif;
+    color: #FFB6C1;
+    margin-right: 35px;
+}
+
+.navbar-text {
+       font-family: 'Roboto Condensed', sans-serif;
+       font-size: 0.9rem;
+ }
+
+ a, a:link, a:visited{
+   color:#F08080;
+ }
+
+
+li {
+      display: inline;
+      margin-right: 35px;
 }
