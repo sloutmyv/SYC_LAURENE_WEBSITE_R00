@@ -2,6 +2,7 @@
 {% load staticfiles %}
 
 {% block head_title %} {{ title }} || {{ block.super }} {% endblock head_title %}
+
 {% block css %}
 {{ block.super }}
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -14,7 +15,13 @@
 {% block content %}
 <!-- Navbar -->
 {% include "APP_001_LANDINGPAGE/nav.html" %}
+<main role="main">
 
+<!-- Carousel -->
+{% include "APP_001_LANDINGPAGE/carousel.html" %}
+
+
+ </main>
 
 
 {% endblock content %}

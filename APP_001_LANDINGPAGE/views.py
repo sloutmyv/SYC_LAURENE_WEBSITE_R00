@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.views.generic.base import TemplateView
 
 
+from .models import InfosProfessionnel
+
 class LandingPageView(TemplateView):
 
     template_name = "APP_001_LANDINGPAGE/home.html"
@@ -9,4 +11,5 @@ class LandingPageView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super(LandingPageView, self).get_context_data(**kwargs)
         context['title'] = "Home"
+        context['infosprofessionnel'] = InfosProfessionnel.objects.all()
         return context

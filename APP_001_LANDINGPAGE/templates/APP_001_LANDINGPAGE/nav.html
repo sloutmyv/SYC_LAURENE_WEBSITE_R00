@@ -1,22 +1,25 @@
+{% load staticfiles %}
 <header>
+{% for item in infosprofessionnel %}
   <nav class="navbar navbar-expand-md navbar fixed-top bg-light">
-    <a class="navbar-brand" href="#">Laurene Simonin</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <img src="{% static 'APP_001_LANDINGPAGE/img/Pictocigogne.png' %}" width="50" height="50" alt="">
+    <a class="navbar-brand" href="#">{{ item.first_name }} {{ item.last_name }}</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav">
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav mx-auto">
             <li>
             <span class="navbar-text">
-                <a class='nav-link' href="tel:+33782864223">
-                <i class="fas fa-mobile-alt"></i>&nbsp;07.82.86.42.23</a>
+                <a class='nav-link' href="tel:{{ item.phone_number }}">
+                <i class="fas fa-mobile-alt"></i>&nbsp;{{ item.phone_number }}</a>
             </span>
             </li>
             <li>
             <span class="navbar-text">
                 <a class='nav-link' href="mailto:clerc.sylv@gmail.com">
-                <i class="far fa-envelope"></i>&nbsp;laurene.simonin.sagefemme@gmail.com</a>
+                <i class="far fa-envelope"></i>&nbsp;{{ item.email }}</a>
             </span>
             </li>
             <li>
@@ -28,11 +31,11 @@
             <li>
             <span class="navbar-text">
                 <a class='nav-link' href="https://www.google.fr/maps/place/16+Rue+des+Marronniers,+69960+Corbas/@45.6638323,4.8923114,17z/data=!3m1!4b1!4m5!3m4!1s0x47f4c2def416edd3:0xac4eaf45ec379cc3!8m2!3d45.6638286!4d4.8945001">
-                <i class="fas fa-location-arrow"></i>&nbsp;16 rue des Marroniers, 69960 Corbas</a>
+                <i class="fas fa-location-arrow"></i>&nbsp;{{ item.pro_adress }}</a>
             </span>
             </li>
         </ul>
     </div>
-
   </nav>
+{% endfor %}
 </header>
