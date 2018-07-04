@@ -1,9 +1,8 @@
 {% load staticfiles %}
 <header>
-{% for item in infosprofessionnel %}
   <nav class="navbar navbar-expand-md navbar fixed-top bg-light">
     <img src="{% static 'APP_001_LANDINGPAGE/img/Pictocigogne.png' %}" width="50" height="50" alt="">
-    <a class="navbar-brand" href="#">{{ item.first_name }} {{ item.last_name }}</a>
+    <a class="navbar-brand" href="#">{{ infosprofessionnelles.first_name }} {{ infosprofessionnelles.last_name }}</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -12,14 +11,14 @@
         <ul class="navbar-nav mx-auto">
             <li>
             <span class="navbar-text">
-                <a class='nav-link' href="tel:{{ item.phone_number }}">
-                <i class="fas fa-mobile-alt"></i>&nbsp;{{ item.phone_number }}</a>
+                <a class='nav-link' href="tel:{{ infosprofessionnelles.phone_number }}">
+                <i class="fas fa-mobile-alt"></i>&nbsp;{{ infosprofessionnelles.phone_number_p }}</a>
             </span>
             </li>
             <li>
             <span class="navbar-text">
                 <a class='nav-link' href="mailto:clerc.sylv@gmail.com">
-                <i class="far fa-envelope"></i>&nbsp;{{ item.email }}</a>
+                <i class="far fa-envelope"></i>&nbsp;{{ infosprofessionnelles.email }}</a>
             </span>
             </li>
             <li>
@@ -31,11 +30,10 @@
             <li>
             <span class="navbar-text">
                 <a class='nav-link' href="https://www.google.fr/maps/place/16+Rue+des+Marronniers,+69960+Corbas/@45.6638323,4.8923114,17z/data=!3m1!4b1!4m5!3m4!1s0x47f4c2def416edd3:0xac4eaf45ec379cc3!8m2!3d45.6638286!4d4.8945001">
-                <i class="fas fa-location-arrow"></i>&nbsp;{{ item.pro_adress }}</a>
+                <i class="fas fa-location-arrow"></i>&nbsp;{{ infosprofessionnelles.pro_adress }}</a>
             </span>
             </li>
         </ul>
     </div>
   </nav>
-{% endfor %}
 </header>
