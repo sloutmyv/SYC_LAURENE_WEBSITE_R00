@@ -8,30 +8,31 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav mx-auto">
-            <li>
-            <span class="navbar-text">
-                <a class='nav-link' href="tel:{{ infosprofessionnelles.phone_number }}">
-                <i class="fas fa-mobile-alt"></i>&nbsp;{{ infosprofessionnelles.phone_number_p }}</a>
-            </span>
+        <ul class="navbar-nav">
+            {% for cat in categorieactes %}
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{ cat.categorie }}
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">test 1</a>
+                <a class="dropdown-item" href="#">test 2</a>
+              </div>
             </li>
-            <li>
-            <span class="navbar-text">
-                <a class='nav-link' href="mailto:clerc.sylv@gmail.com">
-                <i class="far fa-envelope"></i>&nbsp;{{ infosprofessionnelles.email }}</a>
-            </span>
+            {% endfor %}
+            <li class="nav-item">
+                <a class="nav-link" href="#">MON PARCOURS</a>
             </li>
-            <li>
-            <span class="navbar-text">
-                <a class='nav-link' href="https://www.doctolib.fr/sage-femme/corbas/laurene-simonin">
-                <i class="far fa-calendar-alt"></i>&nbsp;Prendre un rendez-vous</a>
-            </span>
-            </li>
-            <li>
-            <span class="navbar-text">
-                <a class='nav-link' href="https://www.google.fr/maps/place/16+Rue+des+Marronniers,+69960+Corbas/@45.6638323,4.8923114,17z/data=!3m1!4b1!4m5!3m4!1s0x47f4c2def416edd3:0xac4eaf45ec379cc3!8m2!3d45.6638286!4d4.8945001">
-                <i class="fas fa-location-arrow"></i>&nbsp;{{ infosprofessionnelles.pro_adress }}</a>
-            </span>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                CONTACT
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="tel:{{ infosprofessionnelles.phone_number }}"><i class="fas fa-mobile-alt"></i>&nbsp;{{ infosprofessionnelles.phone_number_p }}</a>
+                <a class="dropdown-item" href="mailto:clerc.sylv@gmail.com"><i class="far fa-envelope"></i>&nbsp;{{ infosprofessionnelles.email }}</a>
+                <a class="dropdown-item" href="https://www.doctolib.fr/sage-femme/corbas/laurene-simonin"><i class="far fa-calendar-alt"></i>&nbsp;Prendre un rendez-vous</a>
+                <a class="dropdown-item" href="#"><i class="fas fa-location-arrow"></i>&nbsp;{{ infosprofessionnelles.pro_adress }}</a>
+              </div>
             </li>
         </ul>
     </div>

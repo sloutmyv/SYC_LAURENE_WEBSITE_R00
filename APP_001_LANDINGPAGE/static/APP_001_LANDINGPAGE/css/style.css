@@ -1,17 +1,20 @@
-/* My STYLES
--------------------------------------------------- */
 .navbar-brand {
     font-family: 'Montserrat', sans-serif;
     color: #FFB6C1;
     margin-right: 35px;
 }
-.navbar-text {
-       font-family: 'Roboto Condensed', sans-serif;
-       font-size: 0.9rem;
+
+.navbar-nav {
+       font-family: 'Roboto Condensed', sans-serif !important;
+       font-size: 0.9rem !important;
+       color:#F08080 !important;
  }
+
+
  a, a:link, a:visited{
    color:#F08080;
  }
+
 li{
       display: inline;
       margin-right: 35px;

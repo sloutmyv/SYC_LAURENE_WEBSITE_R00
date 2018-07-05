@@ -22,3 +22,27 @@ class InfosProfessionnelles(models.Model):
         if not self.phone_number_p:
             self.phone_number_p = self.printable_number()
         super(InfosProfessionnelles, self).save(*args, **kwargs)
+
+def upload_location(instance, filename):
+    return '%s/%s' % (instance.id, filename)
+
+class CategoriesActes(models.Model):
+    categorie       = models.CharField(max_length=120)
+    description     = models.TextField()
+    image_carousel  = models.ImageField(upload_to=upload_location,
+                                        null=True,
+                                        blank=True,
+                                        width_field="width_field",
+                                        height_field="height_field")
+    width_field     = models.IntegerField(default=0)
+    height_field    = models.IntegerField(default=0)
+
+    def __str__(self):
+        return self.categorie
+
+    def save(self, *args, **kwargs):
+        for field_name in ['categorie']:
+            val = getattr(self, field_name, False)
+            if val:
+                setattr(self, field_name, val.upper())
+        super(CategoriesActes, self).save(*args, **kwargs)
