@@ -1,14 +1,27 @@
 #header {
     background: url("/static/APP_001_CLIENTPAGE/img/header-bg.png") 100% 0 no-repeat fixed;
-    opacity: 0.60;
+    opacity: 1.00;
 }
 
-#head_praticien_infos{
+#head_main{
+    font-family: 'Dosis', sans-serif;
+    font-size: 2rem;
+}
+
+#head_icon{
+    font-size: 2.6rem;
+    color: 	#396054;
+}
+
+#head_contact{
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.7rem;
-    color: #FFB6C1;
+    color: 	#396054;
 }
 
 a, a:link, a:visited{
-  color:#FFB6C1;
+  color:#396054;
+}
+
+.nounderline {
+  text-decoration: none !important
 }
