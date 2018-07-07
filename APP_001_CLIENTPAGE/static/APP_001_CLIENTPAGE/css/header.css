@@ -1,0 +1,14 @@
+#header {
+    background: url("/static/APP_001_CLIENTPAGE/img/header-bg.png") 100% 0 no-repeat fixed;
+    opacity: 0.60;
+}
+
+#head_praticien_infos{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.7rem;
+    color: #FFB6C1;
+}
+
+a, a:link, a:visited{
+  color:#FFB6C1;
+}

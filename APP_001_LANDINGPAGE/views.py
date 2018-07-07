@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views.generic.base import TemplateView
 
 
-from .models import InfosProfessionnelles, CategoriesActes
+from .models import Description, ActCategory
 
 class LandingPageView(TemplateView):
 
@@ -11,6 +11,6 @@ class LandingPageView(TemplateView):
     def get_context_data(self, *args, **kwargs):
         context = super(LandingPageView, self).get_context_data(*args, **kwargs)
         context['title'] = "Home"
-        context['infosprofessionnelles'] = InfosProfessionnelles.objects.all().first()
-        context['categorieactes'] = CategoriesActes.objects.all()
+        context['description'] = Description.objects.all().first()
+        context['actcategory'] = ActCategory.objects.all()
         return context
