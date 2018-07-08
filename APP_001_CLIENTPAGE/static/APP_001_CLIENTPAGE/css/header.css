@@ -25,3 +25,8 @@ a, a:link, a:visited{
 .nounderline {
   text-decoration: none !important
 }
+
+.head-icon:hover,
+.head-icon:focus {
+  color: #f08080;
+}

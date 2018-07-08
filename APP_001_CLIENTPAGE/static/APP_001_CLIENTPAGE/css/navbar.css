@@ -1,0 +1,164 @@
+/* SLOUTMYV MODIF */
+#navbar{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+}
+
+/* NAV AUTO GENERATE */
+.navbar {
+  background-color: #ffffff;
+}
+.navbar .navbar-brand {
+  color: #396054;
+}
+.navbar .navbar-brand:hover,
+.navbar .navbar-brand:focus {
+  color: #f08080;
+}
+.navbar .navbar-text {
+  color: #396054;
+}
+.navbar .navbar-text a {
+  color: #f08080;
+}
+.navbar .navbar-text a:hover,
+.navbar .navbar-text a:focus {
+  color: #f08080;
+}
+.navbar .navbar-nav .nav-link {
+  color: #396054;
+  border-radius: .25rem;
+  margin: 0 0.25em;
+}
+.navbar .navbar-nav .nav-link:not(.disabled):hover,
+.navbar .navbar-nav .nav-link:not(.disabled):focus {
+  color: #f08080;
+}
+.navbar .navbar-nav .nav-item.active .nav-link,
+.navbar .navbar-nav .nav-item.active .nav-link:hover,
+.navbar .navbar-nav .nav-item.active .nav-link:focus,
+.navbar .navbar-nav .nav-item.show .nav-link,
+.navbar .navbar-nav .nav-item.show .nav-link:hover,
+.navbar .navbar-nav .nav-item.show .nav-link:focus {
+  color: #f08080;
+  background-color: #b22222;
+}
+.navbar .navbar-toggle {
+  border-color: #b22222;
+}
+.navbar .navbar-toggle:hover,
+.navbar .navbar-toggle:focus {
+  background-color: #b22222;
+}
+.navbar .navbar-toggle .navbar-toggler-icon {
+  color: #396054;
+}
+.navbar .navbar-collapse,
+.navbar .navbar-form {
+  border-color: #396054;
+}
+.navbar .navbar-link {
+  color: #396054;
+}
+.navbar .navbar-link:hover {
+  color: #f08080;
+}
+
+/* MEDIA */
+@media (max-width: 575px) {
+  .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item {
+    color: #396054;
+  }
+  .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+  .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+    color: #f08080;
+  }
+  .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item.active {
+    color: #f08080;
+    background-color: #b22222;
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item {
+    color: #396054;
+  }
+  .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+  .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+    color: #f08080;
+  }
+  .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item.active {
+    color: #f08080;
+    background-color: #b22222;
+  }
+}
+
+@media (max-width: 991px) {
+  .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item {
+    color: #396054;
+  }
+  .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+  .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+    color: #f08080;
+  }
+  .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item.active {
+    color: #f08080;
+    background-color: #b22222;
+  }
+}
+
+@media (max-width: 1199px) {
+  .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item {
+    color: #396054;
+  }
+  .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+  .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+    color: #f08080;
+  }
+  .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item.active {
+    color: #f08080;
+    background-color: #b22222;
+  }
+}
+
+.navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item {
+  color: #396054;
+}
+.navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+.navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+  color: #f08080;
+}
+.navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item.active {
+  color: #f08080;
+  background-color: #b22222;
+}
+
+
+
+@media (min-width: 575px) {
+    .navbar-nav>li{
+      font-size: 1rem;
+    }
+}
+
+@media (min-width: 767px) {
+
+    .navbar-nav>li{
+      border-right: 1px solid #000;
+      font-size: 0.68rem;
+    }
+    .navbar-nav>li:last-child{
+       border: none;
+    }
+}
+
+@media (min-width: 991px) {
+    .navbar-nav>li{
+      font-size: 0.8rem;
+    }
+}
+@media (min-width: 1199px) {
+    .navbar-nav>li{
+      font-size: 1rem;
+    }
+}
