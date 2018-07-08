@@ -10,23 +10,16 @@
 
 #head_icon{
     font-size: 2.6rem;
-    color: 	#396054;
 }
 
 #head_contact{
     font-family: 'Montserrat', sans-serif;
-    color: 	#396054;
 }
 
-a, a:link, a:visited{
-  color:#396054;
+a, a:link, a:visited {
+  color: #396054;
 }
 
 .nounderline {
   text-decoration: none !important
-}
-
-.head-icon:hover,
-.head-icon:focus {
-  color: #f08080;
 }
