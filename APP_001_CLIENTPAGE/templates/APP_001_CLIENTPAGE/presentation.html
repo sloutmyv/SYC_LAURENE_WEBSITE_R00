@@ -1,0 +1,35 @@
+{% load staticfiles %}
+<div class="container">
+    <hr class="featurette-divider">
+    <div class="row featurette">
+      <div class="col-md-9">
+        <h2 class="featurette-heading text-muted" id="votre_sf_title">VOTRE SAGE-FEMME</h2>
+        <p class="lead" id="votre_sf_text">Bienvenue sur la page d’accueil de mon cabinet de sage-femme situé
+             à Corbas.<br /><br />
+             Une sage femme est une spécialiste de la physiologie de la grossesse. A ce titre, je peux suivre
+             de suivre l'ensemble des étapes de votre grossesse et de vous accompagner après l'accouchement.
+             La sage-femme libérale a pour missions :
+        </p>
+      </div>
+      <div class="col-md-3 mx-auto">
+        <img class="rounded-circle" src="{% static 'APP_001_CLIENTPAGE/img/photo-profil.jpg' %}"
+        alt="Generic placeholder image" width="200" height="200">
+      </div>
+    </div>
+    <hr class="featurette-divider">
+    <div class="row featurette" id='mon_parcours'>
+        <div class="col-md-2 mx-auto">
+          <img class="rounded-circle" src="{% static 'APP_001_CLIENTPAGE/img/photo-profil.jpg' %}"
+          alt="Generic placeholder image" width="200" height="200">
+        </div>
+        <div class="col-md-10">
+            <h2 class="featurette-heading">FORMATION</h2>
+            <span class="text-muted">It'll blow your mind.</span>
+            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla.
+            Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna,
+            vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
+            </p>
+        </div>
+    </div>
+    <hr class="featurette-divider">
+</div>
