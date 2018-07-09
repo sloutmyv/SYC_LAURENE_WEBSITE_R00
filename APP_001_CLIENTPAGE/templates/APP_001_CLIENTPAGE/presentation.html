@@ -2,8 +2,8 @@
 <div class="container">
     <hr class="featurette-divider">
     <div class="row featurette">
-      <div class="col-md-9">
-        <h2 class="featurette-heading text-muted" id="votre_sf_title">VOTRE SAGE-FEMME</h2>
+      <div class="col-md-8">
+        <h2 class="featurette-heading" id="votre_sf_title"><b>VOTRE SAGE-FEMME</b></h2>
         <p class="lead" id="votre_sf_text">Bienvenue sur la page d’accueil de mon cabinet de sage-femme situé
              à Corbas.<br /><br />
              Une sage femme est une spécialiste de la physiologie de la grossesse. A ce titre, je peux suivre
@@ -11,24 +11,26 @@
              La sage-femme libérale a pour missions :
         </p>
       </div>
-      <div class="col-md-3 mx-auto">
-        <img class="rounded-circle" src="{% static 'APP_001_CLIENTPAGE/img/photo-profil.jpg' %}"
-        alt="Generic placeholder image" width="200" height="200">
+      <div class="col-md-4 my-auto" align="center">
+          <img src="{% static 'APP_001_CLIENTPAGE/img/photo-profil-1.png' %}"
+          class="rounded-circle profil-picture" alt="profil-picture">
       </div>
     </div>
     <hr class="featurette-divider">
-    <div class="row featurette" id='mon_parcours'>
-        <div class="col-md-2 mx-auto">
-          <img class="rounded-circle" src="{% static 'APP_001_CLIENTPAGE/img/photo-profil.jpg' %}"
-          alt="Generic placeholder image" width="200" height="200">
+    <div class="row featurette">
+        <div class="col-md-2  my-auto" align="center">
+          <!-- <img class="rounded-circle" src="{% static 'APP_001_CLIENTPAGE/img/photo-profil.jpg' %}"
+          alt="Generic placeholder image" width="500" height="500"> -->
+          <i class="fas fa-graduation-cap" id="icon"></i>
         </div>
         <div class="col-md-10">
-            <h2 class="featurette-heading">FORMATION</h2>
-            <span class="text-muted">It'll blow your mind.</span>
-            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla.
+            <h2 class="featurette-heading" id="mon_parcours_title"><b>MON PARCOURS</b></h2>
+            <span class="text-muted" id="mon_parcours_sub_title">Formation</span>
+            <p class="lead" id="mon_parcours_text">Donec ullamcorper nulla non metus auctor fringilla.
             Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna,
             vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
             </p>
+            <span class="text-muted" id="mon_parcours_sub_title">Expériences professionnelles</span>
         </div>
     </div>
     <hr class="featurette-divider">
