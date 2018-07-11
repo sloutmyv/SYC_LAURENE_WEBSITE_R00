@@ -15,7 +15,7 @@
 }
 
 #map {
-    height: 500px;
+    height: 350px;
     width : 100%;
 }
 
@@ -35,6 +35,10 @@ a, a:link, a:visited {
     background-color: #ed8173;
     border-radius: 50%;
     display: inline-block;
+}
+
+.double {
+    border-style: double;
 }
 
 .logo {
