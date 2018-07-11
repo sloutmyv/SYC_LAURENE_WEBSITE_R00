@@ -1,0 +1,121 @@
+{% load staticfiles %}
+<div id="contact">
+    <div class="container">
+        <div class="row contact-layout">
+            <div class="col-md-12 contact-subcol-layout">
+                <h2 class="contact-title">CONTACT</h2>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="row">
+                            <div class="col-12">
+                                <span class="dot">
+                                    <i class="fas fa-mobile-alt logo"></i>
+                                </span>
+                            </div>
+                            <div class="col-12 py-3">
+                                <a href="tel:+33">07.82.86.42.23</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-12">
+                                <span class="dot">
+                                    <i class="far fa-envelope logo"></i>
+                                </span>
+                            </div>
+                            <div class="col-12 py-3">
+                                <a href="mailto:clerc.sylv@gmail.com">laurene.simonin.sagefemme@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="row">
+                            <div class="col-12">
+                                <span class="dot">
+                                    <i class="far fa-calendar-alt logo"></i>
+                                </span>
+                            </div>
+                            <div class="col-12 py-3">
+                                <a href="https://www.doctolib.fr/sage-femme/corbas/laurene-simonin">Prendre un rendez-vous</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="featurette-divider">
+        <div class="row contact-layout">
+            <div class="col-md-6 vertical-bar">
+                <h2 class="contact-title ">HORRAIRES</h2>
+                <div class='container px-5'>
+                <table class="table table-striped contact-subcol-layout">
+                  <tbody>
+                    <tr>
+                      <td>Lundi</td>
+                      <td>9h-19h</td>
+                    </tr>
+                    <tr>
+                        <td>Mardi</td>
+                        <td>9h-19h</td>
+                    </tr>
+                    <tr>
+                        <td>Mercredi</td>
+                        <td>9h-19h</td>
+                    </tr>
+                    <tr>
+                        <td>Jeudi</td>
+                        <td>9h-19h</td>
+                    </tr>
+                    <tr>
+                        <td>Vendredi</td>
+                        <td>9h-19h</td>
+                    </tr>
+                  </tbody>
+                </table>
+                </div>
+            </div>
+            <div class="col-md-6 py-5">
+                <h2 class="contact-title">ACCES</h2>
+                <div class="row adress-layout ">
+                    <div class="col-12">
+                        <span class="dot">
+                            <i class="fas fa-location-arrow logo"></i>
+                        </span>
+                    </div>
+                    <div class="col-12 py-3">
+                        <a href="#"></i>16, rue de Marronniers, 69960 Corbas</a></br>
+                        <p>
+                            Bus ligne 3,5 arrêt truc muche
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div id="map"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+<!-- // Initialize and add the map -->
+function initMap() {
+  // The location of Corbas
+  var corbas = {lat: 45.663829, lng: 4.894500};
+  // The map, centered at Uluru
+  var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 18, center: corbas});
+  // The marker, positioned at Uluru
+  var marker = new google.maps.Marker({position: corbas, map: map});
+}
+</script>
+
+<!--Load the API from the specified URL
+* The async attribute allows the browser to render the page while the API loads
+* The key parameter will contain your own API key (which is not needed for this tutorial)
+* The callback parameter executes the initMap() function
+-->
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQD02AjL9sXl6M3M_MD3sKJxAN4jp9GfU&callback=initMap">
+</script>

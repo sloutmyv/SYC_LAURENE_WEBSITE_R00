@@ -1,17 +1,12 @@
-#head_main{
+.header-font {
     font-family: 'Shadows Into Light', cursive;
-    font-size: 2rem;
 }
 
-#head_icon{
-    font-size: 2.6rem;
-}
-
-#head_contact{
+.header-contact{
     font-family: 'Montserrat', sans-serif;
 }
 
-a, a:link, a:visited {
+a.header-color, a.header-color:link, a.header-color:visited {
   /* color: #396054; */
   color: #337994;
 }
@@ -22,25 +17,24 @@ a, a:link, a:visited {
 
 /* // Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
-    #head_main{
+    .header-font{
         font-size: 2.3rem;
     }
-    #head_icon{
+    .header-icon{
         font-size: 2.4rem;
     }
     img {
         height:110px;
         width:110px;
-
     }
 }
 
 /* // Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) and (max-width: 767.98px) {
-    #head_main{
+    .header-font{
         font-size: 2.5rem;
     }
-    #head_icon{
+    .header-icon{
         font-size: 2.4rem;
     }
     img {
@@ -51,10 +45,10 @@ a, a:link, a:visited {
 
 /* // Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
-    #head_main{
+    .header-font{
         font-size: 2.5rem;
     }
-    #head_icon{
+    .header-icon{
         font-size: 2.4rem;
     }
     img {
@@ -65,10 +59,10 @@ a, a:link, a:visited {
 
 /* // Large devices (desktops, 992px and up) */
 @media (min-width: 992px) and (max-width: 1199.98px) {
-    #head_main{
+    .header-font{
         font-size: 1.8rem;
     }
-    #head_icon{
+    .header-icon{
         font-size: 2.4rem;
     }
     img {
@@ -79,10 +73,10 @@ a, a:link, a:visited {
 
 /* // Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-    #head_main{
+    .header-font{
         font-size: 2.2rem;
     }
-    #head_icon{
+    .header-icon{
         font-size: 2.4rem;
     }
     img {

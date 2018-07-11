@@ -1,0 +1,44 @@
+.contact-title {
+    font-family: 'Amatic SC', cursive;
+    color: #337994;
+    text-align: center;
+}
+
+.contact-subcol-layout {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+
+.adress-layout{
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+
+#map {
+    height: 500px;
+    width : 100%;
+}
+
+a, a:link, a:visited {
+  /* color: #396054; */
+  color: #000000;
+}
+
+.vertical-bar{
+    padding-right:20px;
+    border-right: 1px solid #ccc;
+}
+
+.dot {
+    height: 75px;
+    width: 75px;
+    background-color: #ed8173;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.logo {
+    color: #337994;
+    font-size: 2.3rem;
+    margin-top: 19px;
+}
