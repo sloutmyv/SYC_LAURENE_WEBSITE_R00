@@ -47,14 +47,6 @@ class Office(models.Model):
     def __str__(self):
         return self.office_name
 
-# class Act(models.Model):
-#     act_name_small  = models.CharField(max_length=120)
-#     act_name_long   = models.CharField(max_length=120)
-#     act_category    = models.ForeignKey(ActCategory, related_name='act')
-#     act_description = models.TextField(null=True,blank=True)
-#     act_image       = models.ImageField(null=True, blank=True)
-#     act_slug        = models.SlugField(null=True, blank=True)
-
 class ActCategory(models.Model):
     actcategory_name                = models.CharField(max_length=120)
     actcategory_short_description   = models.TextField(null=True,blank=True)
@@ -73,7 +65,24 @@ class ActCategory(models.Model):
     def title(self):
         return self.actcategory_name
 
+class Act(models.Model):
+    act_name_small  = models.CharField(max_length=120)
+    act_name_long   = models.CharField(max_length=120)
+    act_category    = models.ForeignKey(ActCategory, related_name='acte')
+    act_description = models.TextField(null=True,blank=True)
+    act_image       = models.ImageField(null=True, blank=True)
+    slug            = models.SlugField(null=True, blank=True)
 
+    class Meta:
+        verbose_name = 'Act'
+        verbose_name_plural = 'Acts'
+
+    def __str__(self):
+        return self.act_name_small
+
+    @property
+    def title(self):
+        return self.act_name_small
 
 # Signaux création slugs
 def rl_pre_save_receiver(sender, instance, *args, **kwargs):
@@ -81,4 +90,4 @@ def rl_pre_save_receiver(sender, instance, *args, **kwargs):
         instance.slug=unique_slug_generator(instance)
 
 pre_save.connect(rl_pre_save_receiver, sender=ActCategory)
-# pre_save.connect(rl_pre_save_receiver, sender=Act)
+pre_save.connect(rl_pre_save_receiver, sender=Act)

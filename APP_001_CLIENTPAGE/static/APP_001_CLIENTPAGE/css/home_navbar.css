@@ -4,6 +4,11 @@
     font-size: 1rem;
 }
 
+.nav-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+}
+
 ul.nav li.dropdown:hover > ul.dropdown-menu {
     display: block;
 }
