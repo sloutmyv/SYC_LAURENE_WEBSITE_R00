@@ -1,4 +1,5 @@
 {% load staticfiles %}
+{% load markdown_deux_tags %}
 <div id="contact">
     <div class="container">
         <div class="row contact-layout">
@@ -13,7 +14,7 @@
                                 </span>
                             </div>
                             <div class="col-12 py-3">
-                                <a href="tel:+33">07.82.86.42.23</a>
+                                <a href="tel:+33">{{ praticien.printable_number }}</a>
                             </div>
                         </div>
                     </div>
@@ -25,7 +26,7 @@
                                 </span>
                             </div>
                             <div class="col-12 py-3">
-                                <a href="mailto:clerc.sylv@gmail.com">laurene.simonin.sagefemme@gmail.com</a>
+                                <a href="mailto:{{ praticien.praticien_email }}">{{ praticien.praticien_email }}</a>
                             </div>
                         </div>
                     </div>
@@ -37,7 +38,7 @@
                                 </span>
                             </div>
                             <div class="col-12 py-3">
-                                <a href="https://www.doctolib.fr/sage-femme/corbas/laurene-simonin">Prendre un rendez-vous</a>
+                                <a href="{{ praticien.praticien_url_rdv }}">Prendre un rendez-vous</a>
                             </div>
                         </div>
                     </div>
@@ -84,10 +85,8 @@
                         </span>
                     </div>
                     <div class="col-12 py-3">
-                        <a href="#"></i>16, rue de Marronniers, 69960 Corbas</a></br>
-                        <p>
-                            Bus ligne 3,5 arrêt truc muche
-                        </p>
+                        <a href="#">{{ office.office_adresse }}</a></br>
+                        <p>{{ office.office_acces|markdown }}</p>
                     </div>
                 </div>
             </div>

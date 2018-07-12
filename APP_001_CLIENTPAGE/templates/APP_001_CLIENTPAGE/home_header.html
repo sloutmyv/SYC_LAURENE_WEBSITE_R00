@@ -22,14 +22,14 @@
             <div class="col-6 col-md-2" align="center">
                 <div class='row pt-3'>
                     <div class="col-12">
-                        <a class="header-icon header-color" href="https://www.doctolib.fr/sage-femme/corbas/laurene-simonin">
+                        <a class="header-icon header-color" href="{{ praticien.praticien_url_rdv }}">
                             <i class="fas fa-pen-square "></i>
                         </a>
                     </div>
                 </div>
                 <div class='row'>
                     <div class="col-12">
-                        <a class="header-contact header-color" href="https://www.doctolib.fr/sage-femme/corbas/laurene-simonin">RENDEZ-VOUS</a>
+                        <a class="header-contact header-color" href="{{ praticien.praticien_url_rdv }}">RENDEZ-VOUS</a>
                     </div>
                 </div>
             </div>
@@ -43,7 +43,7 @@
                 </div>
                 <div class='row'>
                     <div class="col-12">
-                        <a class="header-contact header-color" href="#">07.82.86.42.23</a>
+                        <a class="header-contact header-color" href="#">{{ praticien.printable_number }}</a>
                     </div>
                 </div>
             </div>

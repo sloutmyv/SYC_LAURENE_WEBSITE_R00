@@ -1,21 +1,15 @@
 {% load staticfiles %}
+{% load markdown_deux_tags %}
 <div id="presentation">
 <div class="container">
     <hr class="featurette-divider">
     <div class="row">
-      <div class="col-md-8">
-        <h2 class="presentation-title">
-            <b>VOTRE SAGE-FEMME</b>
-        </h2>
-        <p class="presentation-text">Bienvenue sur la page d’accueil de mon cabinet de sage-femme situé
-             à Corbas.<br /><br />
-             Une sage femme est une spécialiste de la physiologie de la grossesse. A ce titre, je peux suivre
-             de suivre l'ensemble des étapes de votre grossesse et de vous accompagner après l'accouchement.
-             La sage-femme libérale a pour missions :
-        </p>
+      <div class="col-md-8 presentation-text">
+        <h2 class="presentation-title"><b>VOTRE SAGE-FEMME</b></h2>
+        <p>{{ praticien.praticien_introduction|markdown }}</p>
       </div>
       <div class="col-md-4 my-auto" align="center">
-          <img src="{% static 'APP_001_CLIENTPAGE/img/photo-profil-1.png' %}"
+          <img src="{{ praticien.praticien_image.url }}"
           class="rounded-circle profil-picture" alt="photo-LS">
       </div>
     </div>
@@ -28,14 +22,12 @@
           alt="Generic placeholder image" width="500" height="500"> -->
           <i class="fas fa-graduation-cap logo"></i>
         </div>
-        <div class="col-md-10">
+        <div class="col-md-10 presentation-text">
             <h2 class="presentation-title"><b>MON PARCOURS</b></h2>
             <span class="text-muted presentation-subtitle">Formation</span>
-            <p class="presentation-text">Donec ullamcorper nulla non metus auctor fringilla.
-            Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna,
-            vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
-            </p>
+            <p>{{ praticien.praticien_formation|markdown }}</p>
             <span class="text-muted presentation-subtitle">Expériences professionnelles</span>
+            <p>{{ praticien.praticien_experiences_pro|markdown }}</p>
         </div>
     </div>
     <hr class="featurette-divider">

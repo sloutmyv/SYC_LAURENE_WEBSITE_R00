@@ -38,6 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # Third party apps
+    'pagedown',
+    'markdown_deux',
+
+    #My apps
     'APP_001_CLIENTPAGE',
 ]
 

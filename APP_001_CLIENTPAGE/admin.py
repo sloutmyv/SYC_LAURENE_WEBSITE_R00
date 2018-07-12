@@ -1,5 +1,20 @@
 from django.contrib import admin
+from django.db import models
 
-from .models import Praticien
+from pagedown.widgets import AdminPagedownWidget
 
-admin.site.register(Praticien)
+from .models import Praticien, Office
+
+class PraticienAdmin(admin.ModelAdmin):
+    formfield_overrides = {
+        models.TextField: {'widget': AdminPagedownWidget },
+    }
+
+admin.site.register(Praticien, PraticienAdmin)
+
+class OfficeAdmin(admin.ModelAdmin):
+    formfield_overrides = {
+        models.TextField: {'widget': AdminPagedownWidget },
+    }
+
+admin.site.register(Office, OfficeAdmin)

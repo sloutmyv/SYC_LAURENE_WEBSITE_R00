@@ -24,11 +24,6 @@ a, a:link, a:visited {
   color: #000000;
 }
 
-.vertical-bar{
-    padding-right:20px;
-    border-right: 1px solid #ccc;
-}
-
 .dot {
     height: 75px;
     width: 75px;
@@ -45,4 +40,35 @@ a, a:link, a:visited {
     color: #337994;
     font-size: 2.3rem;
     margin-top: 19px;
+}
+
+@media (max-width: 575.98px) {
+}
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .vertical-bar{
+        padding-right:20px;
+        border-right: 1px solid #ccc;
+    }
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .vertical-bar{
+        padding-right:20px;
+        border-right: 1px solid #ccc;
+    }
+}
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .vertical-bar{
+        padding-right:20px;
+        border-right: 1px solid #ccc;
+    }
 }

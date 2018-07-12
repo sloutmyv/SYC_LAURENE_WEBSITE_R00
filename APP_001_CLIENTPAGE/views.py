@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic.base import TemplateView
 
-from .models import Praticien
+from .models import Praticien, Office
 
 class ClientPageView(TemplateView):
 
@@ -11,4 +11,5 @@ class ClientPageView(TemplateView):
         context = super(ClientPageView, self).get_context_data(*args, **kwargs)
         context['title'] = "Home"
         context['praticien'] = Praticien.objects.all().first()
+        context['office'] = Office.objects.all().first()
         return context
