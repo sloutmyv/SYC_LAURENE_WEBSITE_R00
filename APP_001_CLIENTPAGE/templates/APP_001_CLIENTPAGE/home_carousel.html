@@ -4,43 +4,25 @@
     <div id="demo" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
       <ul class="carousel-indicators">
-        <li data-target="#demo" data-slide-to="0" class="active"></li>
-        <li data-target="#demo" data-slide-to="1"></li>
-        <li data-target="#demo" data-slide-to="2"></li>
+          {% for el in actscategories %}
+          <li data-target="#myCarousel" data-slide-to="{{ forloop.counter0 }}" class="active"></li>
+          {% endfor %}
       </ul>
       <!-- The slideshow -->
       <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="{% static 'APP_001_CLIENTPAGE/img/img-pendant-la-grossesse-2.jpg' %}" alt="Los Angeles">
+      {% for el in actscategories %}
+        <div class="carousel-item {% if forloop.first %} active {% endif %}">
+          <img src="{{ el.actcategory_image.url }}" alt="Slide {{ forloop.counter }}">
           <div class="container">
-              <div class="carousel-caption text-left">
-                <h1><b>PENDANT LA GROSSESSE</b></h1>
-                <p>Afin de préparer au mieux l'arrivée de l'enfant.</p>
-                <p><a class="btn btn-lg btn-light" href="#" role="button">En savoir plus</a></p>
-              </div>
+            <div class="carousel-caption text-left">
+              <h1><b>{{ el.actcategory_name|upper }}</b></h1>
+              <p>{{ el.actcategory_short_description }}</p>
+              <p><a class="btn btn-lg btn-light btn-syc" href="#" role="button">Plus d'information</a></p>
+            </div>
           </div>
         </div>
-        <div class="carousel-item">
-          <img src="{% static 'APP_001_CLIENTPAGE/img/img-apres-la-naissance.jpg' %}" alt="Chicago"   width=640px height=360px>
-          <div class="container">
-              <div class="carousel-caption text-left">
-                <h1>APRES LA NAISSANCE</h1>
-                <p>Pour accompagner les premiers pas d'une nouvelle vie.</p>
-                <p><a class="btn btn-lg btn-light" href="#" role="button">En savoir plus</a></p>
-              </div>
-          </div>
+        {% endfor %}
         </div>
-        <div class="carousel-item">
-          <img src="{% static 'APP_001_CLIENTPAGE/img/img-gyneco.jpg' %}" alt="New York">
-          <div class="container">
-              <div class="carousel-caption text-left">
-                <h1>GYNECOLOGIE</h1>
-                <p>Consultation et suivi.</p>
-                <p><a class="btn btn-lg btn-light" href="#" role="button">En savoir plus</a></p>
-              </div>
-          </div>
-        </div>
-      </div>
       <!-- Left and right controls -->
       <a class="carousel-control-prev" href="#demo" data-slide="prev">
         <span class="carousel-control-prev-icon"></span>
