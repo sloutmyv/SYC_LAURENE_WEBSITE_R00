@@ -6,6 +6,6 @@ from .views import (
 )
 
 urlpatterns = [
-    url(r'^$', ClientPageView.as_view(), name='home'),
-    url(r'^(?P<slug>[\w-]+)/$', ActDetailView.as_view(), name='act-details'),
+    url(r'^$', ClientPageView.as_view(), name='client-page-home'),
+    url(r'^(?P<slug>[\w-]+)/$', ActDetailView.as_view(), name='acte-details'),
 ]

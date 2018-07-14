@@ -19,18 +19,18 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 {% for i in el.acte.all %}
-                  <a class="dropdown-item nav-subtitle" href="/{{ i.slug }}">{{ i.act_name_small }}</a>
+                  <a class="dropdown-item nav-subtitle" href="{% url 'clientpage:client-page-home' %}{{ i.slug }}">{{ i.act_name_small }}</a>
                 {% endfor %}
                 </div>
               </li>
               {% endfor %}
 
               <li class="nav-item">
-                <a class="nav-link" href="/#presentation">MON PARCOURS</a>
+                <a class="nav-link" href="{% url 'clientpage:client-page-home' %}#presentation">MON PARCOURS</a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="/#contact">CONTACT</a>
+                <a class="nav-link" href="{% url 'clientpage:client-page-home' %}#contact">CONTACT</a>
               </li>
 
             </ul>

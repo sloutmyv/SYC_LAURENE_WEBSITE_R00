@@ -27,5 +27,4 @@ class ActDetailView(DetailView):
         context = super(ActDetailView, self).get_context_data(*args, **kwargs)
         context['praticien'] = Praticien.objects.all().first()
         context['actscategories'] = ActCategory.objects.all()
-        print(context)
         return context

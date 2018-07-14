@@ -1,0 +1,23 @@
+{% load staticfiles %}
+<nav class="navbar navbar-expand-md navbar-light fixed-top" id="sideNav">
+    <a class="navbar-brand" href="">
+        <span class="d-none d-md-block">
+          <a href="{% url 'clientpage:client-page-home' %}">
+              <img class="mx-auto d-block logo" src="{% static 'APP_001_CLIENTPAGE/img/Pictocigogne.png' %}">
+          </a>
+        </span>
+        <span class="d-block d-md-none">ESPACE PRO</span>
+    </a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link js-scroll-trigger" href="#about">About</a>
+      </li>
+    </ul>
+  </div>
+</nav>

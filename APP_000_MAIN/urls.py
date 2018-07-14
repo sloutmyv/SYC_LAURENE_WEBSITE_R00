@@ -5,7 +5,9 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^', include('APP_001_CLIENTPAGE.urls', namespace='clientpage')),
+    url(r'^espace-pro/', include('APP_002_PROPAGE.urls', namespace='propage')),
+    url(r'^home/', include('APP_001_CLIENTPAGE.urls', namespace='clientpage')),
+
 ]
 
 if settings.DEBUG:
