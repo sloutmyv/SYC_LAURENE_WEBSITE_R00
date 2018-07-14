@@ -3,7 +3,7 @@
         <nav class="navbar navbar-expand-md navbar-light">
 
             <!-- Toggler/collapsibe Button -->
-        <a class="navbar-brand" href="#">HOME</a>
+        <a class="navbar-brand" href="/">HOME</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
           <span class="navbar-toggler-icon"></span>
 
@@ -14,23 +14,23 @@
           <ul class="navbar-nav navid">
               {% for el in actscategories %}
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
                   {{ el.actcategory_name|upper }}
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 {% for i in el.acte.all %}
-                  <a class="dropdown-item nav-subtitle" href="#">{{ i.act_name_small }}</a>
+                  <a class="dropdown-item nav-subtitle" href="/{{ i.slug }}">{{ i.act_name_small }}</a>
                 {% endfor %}
                 </div>
               </li>
               {% endfor %}
 
               <li class="nav-item">
-                <a class="nav-link" href="#presentation">MON PARCOURS</a>
+                <a class="nav-link" href="/#presentation">MON PARCOURS</a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="#contact">CONTACT</a>
+                <a class="nav-link" href="/#contact">CONTACT</a>
               </li>
 
             </ul>

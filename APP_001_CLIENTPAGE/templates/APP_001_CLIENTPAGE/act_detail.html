@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load static %}
+{% load markdown_deux_tags %}
+
+{% block head_title %} {{ object.act_name_small }} || {{ block.super }} {% endblock head_title %}
+
+{% block css %}
+{{ block.super }}
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+<link href="{% static 'APP_001_CLIENTPAGE/css/home.css' %}" rel="stylesheet">
+<link href="{% static 'APP_001_CLIENTPAGE/css/home_header.css' %}" rel="stylesheet">
+<link href="{% static 'APP_001_CLIENTPAGE/css/home_navbar.css' %}" rel="stylesheet">
+<link href="{% static 'APP_001_CLIENTPAGE/css/act_detail.css' %}" rel="stylesheet">
+<link href="{% static 'APP_001_CLIENTPAGE/css/home_footer.css' %}" rel="stylesheet">
+
+
+{% endblock css %}
+
+<body>
+{% block content %}
+<!-- Header -->
+{% include "APP_001_CLIENTPAGE/home_header.html" %}
+<!-- NavBar -->
+{% include "APP_001_CLIENTPAGE/home_navbar.html" %}
+
+
+
+<!-- Content -->
+<div id="act-detail">
+    <div class="container">
+        <h1 class="main-title mt-4"><b>{{ object.act_name_long|upper }}</b></h1>
+
+        {% if object.act_images.all.0 %}
+        {% with object.act_images.all.0 as image %}
+        <div class="row py-2">
+            <div class="col-12" align="center">
+                <img class="first-act-image" src="{{ image.actimage_image.url }}" alt="{{ el.slug }}">
+            </div>
+        </div>
+        {% endwith %}
+        {% endif %}
+        <div class="row py-2">
+            <div class="col-md-6 act-description">
+                <p>
+                    {{ object.act_description|markdown }}
+                </p>
+            </div>
+            {% if object.act_images.all.2 %}
+            {% with object.act_images.all.0 as image %}
+            <div class="col-md-6" align="center">
+                <img class="first-act-image" src="{{ image.actimage_image.url }}" alt="{{ el.slug }}">
+            </div>
+            {% endwith %}
+            {% endif %}
+
+        </div>
+
+    </div>
+</div>
+
+<!-- Footer -->
+{% include "APP_001_CLIENTPAGE/home_footer.html" %}
+{% endblock content %}
+</body>
