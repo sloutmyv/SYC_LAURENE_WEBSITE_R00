@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block head_title %} {{ title }} || LS {% endblock head_title %}
+
+{% block css %}
+{{ block.super }}
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+<link href="{% static 'APP_002_PROPAGE/css/side-navbar.css' %}" rel="stylesheet">
+<link href="{% static 'APP_002_PROPAGE/css/repertoire.css' %}" rel="stylesheet">
+{% endblock css %}
+
+<body>
+{% block content %}
+<!-- Side Navbar-->
+{% include "APP_002_PROPAGE/side-navbar.html" %}
+
+<div class="container-fluid repertoire-css p-2">
+    <h1> {{ title }} </h1>
+
+    <a href="{% url 'propage:espace-pro-patient-form' %}" class="btn btn-light p-3" role="button">Nouvelle Patiente</a>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Patiente</th>
+                <th>Téléphone</th>
+            </tr>
+        </thead>
+        {% for patient in object_list %}
+        <tbody>
+            <tr>
+                <td><a href="{% url 'propage:espace-pro-repertoire' %}{{ patient.slug}}">{{ patient.patient_first_name}} {{ patient.patient_last_name}}</a></td>
+                <td>{{ patient.praticien_phone_number}}</td>
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+
+
+</div>
+
+{% endblock content %}
+</body>
