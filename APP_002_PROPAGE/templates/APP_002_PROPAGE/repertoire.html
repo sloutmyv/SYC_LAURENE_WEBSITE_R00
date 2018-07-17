@@ -6,6 +6,7 @@
 {% block css %}
 {{ block.super }}
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
 <link href="{% static 'APP_002_PROPAGE/css/side-navbar.css' %}" rel="stylesheet">
 <link href="{% static 'APP_002_PROPAGE/css/repertoire.css' %}" rel="stylesheet">
 {% endblock css %}
@@ -14,31 +15,57 @@
 {% block content %}
 <!-- Side Navbar-->
 {% include "APP_002_PROPAGE/side-navbar.html" %}
+<!-- Repertoire -->
+<div class="container-fluid repertoire-css p-4">
+    <div class=row>
+        <div class='col-md-6'>
+            <h1 class="main-page-title"> {{ title|upper }}</h1>
+        </div>
+        <div class='col-md-6 my-auto text-center'>
+            <a href="{% url 'propage:espace-pro-patient-form' %}" class="btn button" role="button" aria-pressed="true">Nouvelle Patiente</a>
+        </div>
+    </div>
+    <hr class="featurette-divider">
 
-<div class="container-fluid repertoire-css p-2">
-    <h1> {{ title }} </h1>
 
-    <a href="{% url 'propage:espace-pro-patient-form' %}" class="btn btn-light p-3" role="button">Nouvelle Patiente</a>
 
-    <table class="table table-striped">
+    <div class="row">
+        <div class="col-12">
+            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Rechercher...">
+        </div>
+    </div>
+
+    <table class="table table-striped" id="myTable">
         <thead>
             <tr>
                 <th>Patiente</th>
                 <th>Téléphone</th>
             </tr>
         </thead>
-        {% for patient in object_list %}
         <tbody>
+        {% for patient in object_list %}
             <tr>
-                <td><a href="{% url 'propage:espace-pro-repertoire' %}{{ patient.slug}}">{{ patient.patient_first_name}} {{ patient.patient_last_name}}</a></td>
-                <td>{{ patient.praticien_phone_number}}</td>
+                <td style="width: 45%"><a href="{% url 'propage:espace-pro-repertoire' %}{{ patient.slug}}">{{ patient.patient_first_name}} {{ patient.patient_last_name}}</a></td>
+                <td style="width: 45%">{{ patient.praticien_phone_number}}</td>
+                <td style="width: 5%"><i class="fas fa-pencil-alt"></i></td>
+                <td style="width: 5%">
+                    <form action="{% url 'propage:patient-delete' slug=patient.slug %}" method="POST">
+                      {% csrf_token %}
+                      <button class='button-bin' type="submit"><i class="far fa-trash-alt" type="submit"></i></button>
+                      <!-- <input class="btn btn-default btn-danger" type="submit" value="Delete"/> -->
+                    </form>
+                    <!-- <i class="far fa-trash-alt"></i> -->
+                </td>
             </tr>
-        </tbody>
         {% endfor %}
+        </tbody>
     </table>
-
-
 </div>
 
 {% endblock content %}
+
+{% block js %}
+<script src="{% static 'APP_002_PROPAGE/js/repertoire.js' %}"></script>
+{{ block.super }}
+{% endblock js %}
 </body>

@@ -1,7 +1,7 @@
+from django.core.urlresolvers import reverse
 from django.shortcuts import render
 from django.views.generic.base import TemplateView
-
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import ListView, DetailView, CreateView, DeleteView
 
 from .forms import PatientCreateForm
 from .models import Patient
@@ -35,3 +35,8 @@ class PatientDetailView(DetailView):
 class PatientCreateView(CreateView):
     form_class = PatientCreateForm
     template_name = "APP_002_PROPAGE/patient_form.html"
+
+class PatientDeleteView(DeleteView):
+    model = Patient
+    def get_success_url(self):
+        return reverse("propage:espace-pro-repertoire")
