@@ -6,6 +6,7 @@ from .views import (
     PatientDetailView,
     PatientCreateView,
     PatientDeleteView,
+    PatientUpdateView,
 )
 
 urlpatterns = [
@@ -14,4 +15,5 @@ urlpatterns = [
     url(r'^repertoire/create/$', PatientCreateView.as_view(), name='espace-pro-patient-form'),
     url(r'^repertoire/(?P<slug>[\w-]+)/$', PatientDetailView.as_view(), name='patient-details'),
     url(r'^repertoire/(?P<slug>[\w-]+)/delete/$', PatientDeleteView.as_view(), name='patient-delete'),
+    url(r'^repertoire/(?P<slug>[\w-]+)/update/$', PatientUpdateView.as_view(), name='patient-update'),
 ]

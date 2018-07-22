@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 
-{% block head_title %} {{ title }} || LS {% endblock head_title %}
+{% block head_title %} {{Update}} || LS {% endblock head_title %}
 
 {% block css %}
 {{ block.super }}
@@ -13,5 +13,12 @@
 {% block content %}
 <!-- Side Navbar-->
 {% include "APP_002_PROPAGE/side-navbar.html" %}
+<!-- Patient form-->
+<h1> {{main_title}} </h1>
+
+<form method="POST">{% csrf_token %}
+    {{ form.as_p }}
+    <button type='submit'>Mise à jour</button>
+</form>
 {% endblock content %}
 </body>

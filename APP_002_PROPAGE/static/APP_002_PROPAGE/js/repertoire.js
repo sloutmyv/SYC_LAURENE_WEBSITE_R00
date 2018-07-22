@@ -18,3 +18,12 @@ function myFunction() {
     }
   }
 }
+
+$(document).ready( function () {
+    $('#table_id').DataTable({
+    paging: false,
+    "scrollX": true,
+    columnDefs: [{ targets: 'no-sort', orderable: false }],
+    "oLanguage": {"sSearch": "Rechercher: "}
+});
+} );

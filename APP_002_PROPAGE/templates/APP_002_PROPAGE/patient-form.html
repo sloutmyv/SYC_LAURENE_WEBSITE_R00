@@ -1,11 +1,10 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 
-{% block head_title %} form || LS {% endblock head_title %}
+{% block head_title %} {{title}} || LS {% endblock head_title %}
 
 {% block css %}
 {{ block.super }}
-<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 <link href="{% static 'APP_002_PROPAGE/css/side-navbar.css' %}" rel="stylesheet">
 {% endblock css %}
 
@@ -15,7 +14,7 @@
 <!-- Side Navbar-->
 {% include "APP_002_PROPAGE/side-navbar.html" %}
 <!-- Patient form-->
-<h1> Nouvelle patiente </h1>
+<h1> {{ title }} </h1>
 
 <form method="POST">{% csrf_token %}
     {{ form.as_p }}

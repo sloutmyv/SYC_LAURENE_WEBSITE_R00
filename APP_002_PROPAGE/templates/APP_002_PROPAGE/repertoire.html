@@ -5,8 +5,6 @@
 
 {% block css %}
 {{ block.super }}
-<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
 <link href="{% static 'APP_002_PROPAGE/css/side-navbar.css' %}" rel="stylesheet">
 <link href="{% static 'APP_002_PROPAGE/css/repertoire.css' %}" rel="stylesheet">
 {% endblock css %}
@@ -27,28 +25,25 @@
     </div>
     <hr class="featurette-divider">
 
-
-
-    <div class="row">
-        <div class="col-12">
-            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Rechercher...">
-        </div>
-    </div>
-
-    <table class="table table-striped" id="myTable">
+    <table id="table_id" class="display" style="width:100%">
         <thead>
             <tr>
                 <th>Patiente</th>
-                <th>Téléphone</th>
+                <th class='no-sort'>Téléphone</th>
+                <th class='no-sort'></th>
+                <th class='no-sort'></th>
             </tr>
         </thead>
         <tbody>
         {% for patient in object_list %}
             <tr>
-                <td style="width: 45%"><a href="{% url 'propage:espace-pro-repertoire' %}{{ patient.slug}}">{{ patient.patient_first_name}} {{ patient.patient_last_name}}</a></td>
-                <td style="width: 45%">{{ patient.praticien_phone_number}}</td>
-                <td style="width: 5%"><i class="fas fa-pencil-alt"></i></td>
-                <td style="width: 5%">
+                <td><a href="{% url 'propage:espace-pro-repertoire' %}{{ patient.slug}}">{{ patient.patient_first_name}} {{ patient.patient_last_name}}</a></td>
+                <td>{{ patient.praticien_phone_number}}</td>
+                <td align="center">
+                    <a href="{% url 'propage:patient-update' slug=patient.slug %}">
+                    <i class="fas fa-pencil-alt"></i></td>
+                    </a>
+                <td align="center">
                     <form action="{% url 'propage:patient-delete' slug=patient.slug %}" method="POST">
                       {% csrf_token %}
                       <button class='button-bin' type="submit"><i class="far fa-trash-alt" type="submit"></i></button>
@@ -65,7 +60,7 @@
 {% endblock content %}
 
 {% block js %}
-<script src="{% static 'APP_002_PROPAGE/js/repertoire.js' %}"></script>
 {{ block.super }}
+<script src="{% static 'APP_002_PROPAGE/js/repertoire.js' %}"></script>
 {% endblock js %}
 </body>
