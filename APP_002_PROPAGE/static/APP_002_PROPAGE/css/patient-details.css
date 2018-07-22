@@ -1,22 +1,6 @@
 /* Main font */
-.repertoire-css{
+.patient-details-css{
     font-family: 'Montserrat', sans-serif;
-}
-
-/* Main link */
-a:link, a:visited, a:hover, a:active {
-    color: black;
-}
-
-/* link button */
-a.button:link, a.button:visited, a.button:hover, a.button:active {
-    color: white;
-}
-
-.button-bin{
-    padding: 0;
-    border: none;
-    background: none;
 }
 
 /* Main title */
@@ -24,32 +8,25 @@ a.button:link, a.button:visited, a.button:hover, a.button:active {
     text-align: center;
     font-family: 'Amatic SC', cursive;
     color: #337994;
-    font-size: 4rem;
+    font-size: 3rem;
 }
 
-
-.button {
-    background-color: #337994; /* Green */
-    border: none;
+/* Hr */
+hr {
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
     width: 200px;
-    color: white;
-    padding: 12px 22px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 1rem;
+    border-style: inset;
+    border-width: 1px;
 }
+
 
 @media (max-width: 575.98px) {
-    table {
-        font-size: 0.8rem;
-    }
 }
 
 /* // Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) and (max-width: 767.98px) {
-    table {
-        font-size: 0.9rem;
-    }
 }
 
 /* // Medium devices (tablets, 768px and up) */

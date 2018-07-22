@@ -10,7 +10,7 @@ class Patient(models.Model):
     patient_first_name         = models.CharField(max_length=120)
     patient_last_name          = models.CharField(max_length=120)
     phone_regex                = RegexValidator(regex=r'^0\d{9}$', message='Phone number must be like 06XXXXXXXX')
-    praticien_phone_number     = models.CharField(validators=[phone_regex], max_length=10, help_text='Exemple : 0608767898')
+    patient_phone_number     = models.CharField(validators=[phone_regex], max_length=10)
     slug                       = models.SlugField(null=True, blank=True)
 
     class Meta:
@@ -26,6 +26,19 @@ class Patient(models.Model):
 
     def get_absolute_url(self):
         return reverse("propage:patient-details", kwargs={'slug': self.slug})
+
+    def printable_number(self):
+        number = self.patient_phone_number
+        txt=""
+        for i in range(len(number)):
+            txt += number[i]
+            if i%2 == 1 and i < len(number)-1:
+                txt += '.'
+        return txt
+
+    def call_number(self):
+        number = self.patient_phone_number
+        return number[1:]
 
 # Signaux création slugs
 def rl_pre_save_receiver(sender, instance, *args, **kwargs):

@@ -24,6 +24,7 @@ $(document).ready( function () {
     paging: false,
     "scrollX": true,
     columnDefs: [{ targets: 'no-sort', orderable: false }],
-    "oLanguage": {"sSearch": "Rechercher: "}
+    "oLanguage": {"sSearch": "Rechercher: "},
+    "bInfo" : false
 });
 } );

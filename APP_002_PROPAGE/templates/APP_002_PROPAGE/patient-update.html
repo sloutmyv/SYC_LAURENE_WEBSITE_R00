@@ -1,11 +1,13 @@
 {% extends "base.html" %}
 {% load staticfiles %}
+{% load crispy_forms_tags %}
 
-{% block head_title %} {{Update}} || LS {% endblock head_title %}
+{% block head_title %} {{ title }} || LS {% endblock head_title %}
 
 {% block css %}
 {{ block.super }}
 <link href="{% static 'APP_002_PROPAGE/css/side-navbar.css' %}" rel="stylesheet">
+<link href="{% static 'APP_002_PROPAGE/css/patient-form.css' %}" rel="stylesheet">
 {% endblock css %}
 
 <body>
@@ -14,11 +16,19 @@
 <!-- Side Navbar-->
 {% include "APP_002_PROPAGE/side-navbar.html" %}
 <!-- Patient form-->
-<h1> {{main_title}} </h1>
+<div class="patient-form-css">
+    <h1 class="main-page-title pt-4" align="center"> {{ title }} </h1>
 
-<form method="POST">{% csrf_token %}
-    {{ form.as_p }}
-    <button type='submit'>Mise à jour</button>
-</form>
+    <hr class="featurette-divider">
+
+    <div class="row justify-content-center">
+        <div class="col-8 col-lg-6">
+            <form method="POST">{% csrf_token %}
+                {{ form | crispy }}
+                <button type='submit'>Enregistrer</button>
+            </form>
+        </div>
+    </div>
+</div>
 {% endblock content %}
 </body>

@@ -52,8 +52,7 @@ class PatientUpdateView(UpdateView):
 
     def get_context_data(self,*args,**kwargs):
         context = super(PatientUpdateView, self).get_context_data(*args,**kwargs)
-        context['title'] = 'Update'
-        context['main_title'] = 'Mise à jour :'
+        context['title'] = 'Mise à jour'
         return context
 
     def get_queryset(self):
