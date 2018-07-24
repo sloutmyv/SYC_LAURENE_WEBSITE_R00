@@ -1,23 +1,23 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 
-{% block head_title %} {{ title }} || LS {% endblock head_title %}
+{% block head_title %} {{title}} || LS {% endblock head_title %}
 
 {% block css %}
 {{ block.super }}
-<link href="{% static 'APP_002_PROPAGE/css/side-navbar.css' %}" rel="stylesheet">
-<link href="{% static 'APP_002_PROPAGE/css/repertoire.css' %}" rel="stylesheet">
+<link href="{% static 'APP_002_PROPAGE/css/002_side_navbar.css' %}" rel="stylesheet">
+<link href="{% static 'APP_002_PROPAGE/css/003_repertoire.css' %}" rel="stylesheet">
 {% endblock css %}
 
 <body>
 {% block content %}
 <!-- Side Navbar-->
-{% include "APP_002_PROPAGE/side-navbar.html" %}
+{% include "APP_002_PROPAGE/002_side_navbar.html" %}
 <!-- Repertoire -->
 <div class="container-fluid repertoire-css p-4">
     <div class=row>
         <div class='col-md-6'>
-            <h1 class="main-page-title"> {{ title|upper }}</h1>
+            <h1 class="main-page-title"> {{title|upper}}</h1>
         </div>
         <div class='col-md-6 my-auto text-center'>
             <a href="{% url 'propage:espace-pro-patient-form' %}" class="btn button" role="button" aria-pressed="true">Nouvelle Patiente</a>
@@ -37,8 +37,8 @@
         <tbody>
         {% for patient in object_list %}
             <tr>
-                <td><a href="{% url 'propage:espace-pro-repertoire' %}{{ patient.slug}}">{{ patient.patient_first_name}} {{ patient.patient_last_name}}</a></td>
-                <td><a href="tel:+33{{patient.call_number}}">{{ patient.printable_number}}</a></td>
+                <td><a href="{% url 'propage:espace-pro-repertoire' %}{{ patient.slug}}">{{patient.patient_first_name}} {{patient.patient_last_name}}</a></td>
+                <td><a href="tel:+33{{patient.call_number}}">{{patient.printable_number}}</a></td>
                 <td align="center">
                     <a href="{% url 'propage:patient-update' slug=patient.slug %}">
                     <i class="fas fa-pencil-alt"></i></td>
@@ -60,7 +60,7 @@
 {% endblock content %}
 
 {% block js %}
-{{ block.super }}
-<script src="{% static 'APP_002_PROPAGE/js/repertoire.js' %}"></script>
+{{block.super}}
+<script src="{% static 'APP_002_PROPAGE/js/003_repertoire.js' %}"></script>
 {% endblock js %}
 </body>

@@ -1,0 +1,69 @@
+/* 001 - HTML TAGS */
+
+/* 002 - CLASS TAGS */
+.carousel-inner img {
+    height: 100%;
+    width: 100%;
+}
+.carousel-caption {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* 004 - MEDIA QUERIES TAGS */
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    h1{
+        font-size: 1.3rem;
+    }
+    p{
+        font-size: 0.8rem;
+    }
+    .btn-syc {
+        padding: 8px 15px;
+        text-align: center;
+        display: inline-block;
+        font-size: 0.8rem;
+    }
+}
+/* Small devices (sm) (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    h1{
+        font-size: 1.5rem;
+    }
+    p{
+        font-size: 0.9rem;
+    }
+    .btn-syc {
+        padding: 8px 15px;
+        text-align: center;
+        display: inline-block;
+        font-size: 0.9rem;
+    }
+}
+/* Medium devices (md) (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .btn-syc {
+        padding: 8px 15px;
+        text-align: center;
+        display: inline-block;
+        font-size: 1rem;
+    }
+}
+/* Large devices (lg) (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .btn-syc {
+        padding: 8px 15px;
+        text-align: center;
+        display: inline-block;
+        font-size: 1rem;
+    }
+}
+/* Extra large devices (xl) (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .btn-syc {
+        padding: 8px 15px;
+        text-align: center;
+        display: inline-block;
+        font-size: 1rem;
+    }
+}

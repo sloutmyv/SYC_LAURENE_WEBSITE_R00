@@ -1,0 +1,18 @@
+/* 001 - HTML TAGS */
+
+/* 002 - CLASS TAGS */
+.act-description{
+    font-family: 'Montserrat', sans-serif;
+}
+img.first-act-image  {
+    height: 100%;
+    width: 100%;
+}
+.main-title{
+    font-family: 'Amatic SC', cursive;
+    color: #337994;
+}
+
+/* 003 - ID TAGS */
+
+/* 004 - MEDIA QUERIES TAGS */

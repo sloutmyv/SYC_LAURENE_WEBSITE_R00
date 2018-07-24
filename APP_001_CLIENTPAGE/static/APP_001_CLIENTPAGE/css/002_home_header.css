@@ -1,86 +1,84 @@
-.header-font {
-    font-family: 'Shadows Into Light', cursive;
-}
+/* 001 - HTML TAGS */
 
+/* 002 - CLASS TAGS */
+a.header-color, a.header-color:link, a.header-color:visited {
+  color: #337994;
+}
 .header-contact{
     font-family: 'Montserrat', sans-serif;
 }
-
-a.header-color, a.header-color:link, a.header-color:visited {
-  /* color: #396054; */
-  color: #337994;
+.header-font {
+    font-family: 'Shadows Into Light', cursive;
 }
-
 .nounderline {
   text-decoration: none !important
 }
 
-/* // Extra small devices (portrait phones, less than 576px) */
+/* 003 - ID TAGS */
+
+/* 004 - MEDIA QUERIES TAGS */
+/* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
+    img {
+        height:110px;
+        width:110px;
+    }
     .header-font{
         font-size: 2.3rem;
     }
     .header-icon{
         font-size: 2.4rem;
     }
-    img {
-        height:110px;
-        width:110px;
-    }
 }
-
-/* // Small devices (landscape phones, 576px and up) */
+/* Small devices (sm) (landscape phones, 576px and up) */
 @media (min-width: 576px) and (max-width: 767.98px) {
+    img {
+        height:115px;
+        width:115px;
+    }
     .header-font{
         font-size: 2.5rem;
     }
     .header-icon{
         font-size: 2.4rem;
     }
-    img {
-        height:115px;
-        width:115px;
-    }
 }
-
-/* // Medium devices (tablets, 768px and up) */
+/* Medium devices (md) (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
+    img {
+        height:115px;
+        width:115px;
+    }
     .header-font{
         font-size: 2.5rem;
     }
     .header-icon{
         font-size: 2.4rem;
     }
+}
+/* Large devices (lg) (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
     img {
         height:115px;
         width:115px;
     }
-}
-
-/* // Large devices (desktops, 992px and up) */
-@media (min-width: 992px) and (max-width: 1199.98px) {
     .header-font{
         font-size: 1.8rem;
     }
     .header-icon{
         font-size: 2.4rem;
     }
+}
+/* Extra large devices (xl) (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
     img {
         height:115px;
         width:115px;
     }
-}
-
-/* // Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
     .header-font{
         font-size: 2.2rem;
     }
     .header-icon{
         font-size: 2.4rem;
-    }
-    img {
-        height:115px;
-        width:115px;
     }
 }

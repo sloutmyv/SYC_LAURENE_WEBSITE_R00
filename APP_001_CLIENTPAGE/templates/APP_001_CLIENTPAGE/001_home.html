@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block head_title %} {{ title }} || {{ block.super }} {% endblock head_title %}
+
+{% block css %}
+{{ block.super }}
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+<link href="{% static 'APP_001_CLIENTPAGE/css/001_home.css' %}" rel="stylesheet">
+<link href="{% static 'APP_001_CLIENTPAGE/css/002_home_header.css' %}" rel="stylesheet">
+<link href="{% static 'APP_001_CLIENTPAGE/css/003_home_navbar.css' %}" rel="stylesheet">
+<link href="{% static 'APP_001_CLIENTPAGE/css/004_home_carousel.css' %}" rel="stylesheet">
+<link href="{% static 'APP_001_CLIENTPAGE/css/005_home_presentation.css' %}" rel="stylesheet">
+<link href="{% static 'APP_001_CLIENTPAGE/css/006_home_contact.css' %}" rel="stylesheet">
+<link href="{% static 'APP_001_CLIENTPAGE/css/007_home_footer.css' %}" rel="stylesheet">
+{% endblock css %}
+
+<body>
+{% block content %}
+<!-- Header -->
+{% include "APP_001_CLIENTPAGE/002_home_header.html" %}
+<!-- NavBar -->
+{% include "APP_001_CLIENTPAGE/003_home_navbar.html" %}
+<!-- Carousel -->
+{% include "APP_001_CLIENTPAGE/004_home_carousel.html" %}
+<!-- Presentation -->
+{% include "APP_001_CLIENTPAGE/005_home_presentation.html" %}
+<!-- Contact -->
+{% include "APP_001_CLIENTPAGE/006_home_contact.html" %}
+<!-- Footer -->
+{% include "APP_001_CLIENTPAGE/007_home_footer.html" %}
+{% endblock content %}
+</body>

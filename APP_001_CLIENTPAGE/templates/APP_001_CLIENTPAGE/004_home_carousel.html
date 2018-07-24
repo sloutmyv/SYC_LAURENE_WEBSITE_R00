@@ -1,0 +1,35 @@
+{% load staticfiles %}
+<div id="carousel">
+    <div class="container">
+        <div id="demo" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ul class="carousel-indicators">
+            {% for el in actscategories %}
+                <li data-target="#myCarousel" data-slide-to="{{ forloop.counter0 }}" class="active"></li>
+            {% endfor %}
+            </ul>
+            <!-- The slideshow -->
+            <div class="carousel-inner">
+            {% for el in actscategories %}
+                <div class="carousel-item {% if forloop.first %} active {% endif %}">
+                    <img src="{{ el.actcategory_image.url }}" alt="Slide {{ forloop.counter }}">
+                    <div class="container">
+                        <div class="carousel-caption text-left">
+                            <h1><b>{{ el.actcategory_name|upper }}</b></h1>
+                            <p>{{ el.actcategory_short_description }}</p>
+                            <p><a class="btn btn-lg btn-light btn-syc" href="#" role="button">Plus d'information</a></p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+            <!-- Left and right controls -->
+            <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#demo" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+        </div>
+    </div>
+</div>

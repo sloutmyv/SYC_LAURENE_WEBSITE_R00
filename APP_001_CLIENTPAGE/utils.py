@@ -5,6 +5,9 @@ import string
 def random_string_generator(size=10, chars= string.ascii_lowercase + string.digits):
     return ''.join(random.choice(chars) for _ in range(size))
 
+def upload_location(instance, filename):
+    return '%s/%s/%s.jpg' % (instance._meta.verbose_name,instance.id, instance.slug)
+
 DONTUSE = ['create']
 def unique_slug_generator(instance,new_slug=None):
     """

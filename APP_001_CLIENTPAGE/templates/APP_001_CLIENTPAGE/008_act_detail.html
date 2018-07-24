@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% load staticfiles %}
-{% load static %}
 {% load markdown_deux_tags %}
 
 {% block head_title %} {{ object.act_name_small }} || {{ block.super }} {% endblock head_title %}
@@ -10,24 +9,19 @@
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
-<link href="{% static 'APP_001_CLIENTPAGE/css/home.css' %}" rel="stylesheet">
-<link href="{% static 'APP_001_CLIENTPAGE/css/home_header.css' %}" rel="stylesheet">
-<link href="{% static 'APP_001_CLIENTPAGE/css/home_navbar.css' %}" rel="stylesheet">
-<link href="{% static 'APP_001_CLIENTPAGE/css/act_detail.css' %}" rel="stylesheet">
-<link href="{% static 'APP_001_CLIENTPAGE/css/home_footer.css' %}" rel="stylesheet">
-
-
+<link href="{% static 'APP_001_CLIENTPAGE/css/001_home.css' %}" rel="stylesheet">
+<link href="{% static 'APP_001_CLIENTPAGE/css/002_home_header.css' %}" rel="stylesheet">
+<link href="{% static 'APP_001_CLIENTPAGE/css/003_home_navbar.css' %}" rel="stylesheet">
+<link href="{% static 'APP_001_CLIENTPAGE/css/007_home_footer.css' %}" rel="stylesheet">
+<link href="{% static 'APP_001_CLIENTPAGE/css/008_act_detail.css' %}" rel="stylesheet">
 {% endblock css %}
 
 <body>
 {% block content %}
 <!-- Header -->
-{% include "APP_001_CLIENTPAGE/home_header.html" %}
+{% include "APP_001_CLIENTPAGE/002_home_header.html" %}
 <!-- NavBar -->
-{% include "APP_001_CLIENTPAGE/home_navbar.html" %}
-
-
-
+{% include "APP_001_CLIENTPAGE/003_home_navbar.html" %}
 <!-- Content -->
 <div id="act-detail">
     <div class="container">
@@ -55,13 +49,10 @@
             </div>
             {% endwith %}
             {% endif %}
-
         </div>
-
     </div>
 </div>
-
 <!-- Footer -->
-{% include "APP_001_CLIENTPAGE/home_footer.html" %}
+{% include "APP_001_CLIENTPAGE/007_home_footer.html" %}
 {% endblock content %}
 </body>

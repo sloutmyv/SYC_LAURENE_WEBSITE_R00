@@ -1,29 +1,23 @@
+/* 001 - HTML TAGS */
+
+/* 002 - CLASS TAGS */
+a, a:link, a:visited {
+  /* color: #396054; */
+  color: #000000;
+}
+.adress-layout{
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+.contact-subcol-layout {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
 .contact-title {
     font-family: 'Amatic SC', cursive;
     color: #337994;
     text-align: center;
 }
-
-.contact-subcol-layout {
-    font-family: 'Montserrat', sans-serif;
-    text-align: center;
-}
-
-.adress-layout{
-    font-family: 'Montserrat', sans-serif;
-    text-align: center;
-}
-
-#map {
-    height: 350px;
-    width : 100%;
-}
-
-a, a:link, a:visited {
-  /* color: #396054; */
-  color: #000000;
-}
-
 .dot {
     height: 75px;
     width: 75px;
@@ -31,41 +25,43 @@ a, a:link, a:visited {
     border-radius: 50%;
     display: inline-block;
 }
-
 .double {
     border-style: double;
 }
-
 .logo {
     color: #337994;
     font-size: 2.3rem;
     margin-top: 19px;
 }
 
+/* 003 - ID TAGS */
+#map {
+    height: 350px;
+    width : 100%;
+}
+
+/* 004 - MEDIA QUERIES TAGS */
+/* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
 }
-
-/* // Small devices (landscape phones, 576px and up) */
+/* Small devices (sm) (landscape phones, 576px and up) */
 @media (min-width: 576px) and (max-width: 767.98px) {
 }
-
-/* // Medium devices (tablets, 768px and up) */
+/* Medium devices (md) (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
     .vertical-bar{
         padding-right:20px;
         border-right: 1px solid #ccc;
     }
 }
-
-/* // Large devices (desktops, 992px and up) */
+/* Large devices (lg) (desktops, 992px and up) */
 @media (min-width: 992px) and (max-width: 1199.98px) {
     .vertical-bar{
         padding-right:20px;
         border-right: 1px solid #ccc;
     }
 }
-
-/* // Extra large devices (large desktops, 1200px and up) */
+/* Extra large devices (xl) (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
     .vertical-bar{
         padding-right:20px;

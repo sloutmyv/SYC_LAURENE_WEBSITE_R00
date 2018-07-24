@@ -25,6 +25,10 @@ $(document).ready( function () {
     "scrollX": true,
     columnDefs: [{ targets: 'no-sort', orderable: false }],
     "oLanguage": {"sSearch": "Rechercher: "},
-    "bInfo" : false
+    "bInfo" : false,
+    dom: 'Bfrtip',
+    buttons: [
+    'excel', 'pdf', 'print'
+]
 });
 } );
