@@ -16,7 +16,7 @@
 <div class="container-fluid patient-details-css">
     <div class='row justify-content-center'>
         <div class='col-lg-9'>
-            <h1 class="main-page-title pt-4" align="center"> {{object.patient_first_name}} {{object.patient_last_name}}</h1>
+            <h1 class="main-page-title pt-4" align="center"> {{object.patient_first_name|upper}} {{object.patient_last_name|upper}}</h1>
         </div>
         <div class='col-lg-3 date-patient'>
             <div class='row'>
@@ -36,39 +36,141 @@
       <!-- Nav tabs -->
       <ul class="nav-infos-patient nav nav-tabs nav-justified">
         <li class="nav-item">
-          <a class="nav-link active" data-toggle="tab" href="#home">Informations générales</a>
+          <a class="nav-link active" data-toggle="tab" href="#dossier_patiente">Dossier patiente</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-toggle="tab" href="#menu1">Menu 1</a>
+          <a class="nav-link" data-toggle="tab" href="#menu1">Dossier obstétrical</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-toggle="tab" href="#menu2">Menu 2</a>
+          <a class="nav-link" data-toggle="tab" href="#menu2">Consultations</a>
         </li>
       </ul>
 
   <!-- Tab panes -->
   <div class="tab-content">
-    <div id="home" class="container tab-pane active"><br>
-      <h3 class="tab-main-title pt-2"><b>Contact</b></h3>
-      <div class='row justify-content-center tab-text pt-3'>
-          <div class='col-4'>
-            <p>Téléphone : </p>
+    <div id="dossier_patiente" class="container tab-pane active"><br>
+        <div class='row'>
+            <div class='col-8 pt-2'>
+                <h3 class="tab-main-title"><b><u>Informations générales :</u></b></h3>
+            </div>
+            <div class='col-4 date-patient pt-1'>
+                <a href="{% url 'propage:patient-update' slug=object.slug %}" class="btn button" role="button" aria-pressed="true">Mise à jour</a>
+            </div>
+        </div>
+      <div class="informations-generales pt-2">
+          <div class='row tab-text'>
+              <div class='col-6 col-sm-5'>
+                  <p class='champs'>Prénom(s) : </p>
+              </div>
+              <div class='col-6'>
+                  <p class='champs'>{{object.patient_first_name}}</p>
+              </div>
           </div>
-          <div class='col-8'>
-            <p>{{object.printable_number}} </p>
+          <div class='row tab-text'>
+              <div class='col-6 col-sm-5'>
+                  <p class='champs'>Nom(s) : </p>
+              </div>
+              <div class='col-6'>
+                  <p class='champs'>{{object.patient_last_name}}</p>
+              </div>
           </div>
-          <div class='col-4'>
-            <p>Adresse : </p>
+          {% if object.patient_maiden_name %}
+          <div class='row tab-text'>
+              <div class='col-6 col-sm-5'>
+                  <p class='champs'>Nom(s) de jeune fille : </p>
+              </div>
+              <div class='col-6'>
+                  <p class='champs'>{{object.patient_maiden_name}}</p>
+              </div>
           </div>
-          <div class='col-8'>
-            <p>{{object.get_adress}} </p>
+          {% endif %}
+          {% if object.patient_birthday %}
+          </br>
+
+          <div class='row tab-text'>
+              <div class='col-6 col-sm-5'>
+                  <p class='champs'>Date de naissance : </p>
+              </div>
+              <div class='col-6'>
+                  <p class='champs'>{{object.patient_birthday|date:'d-m-Y'}}</p>
+              </div>
           </div>
-          {% if object.patient_note %}
-          <div class='col-4'>
-            <p>Note(s) : </p>
+          <div class='row tab-text'>
+              <div class='col-6 col-sm-5'>
+                  <p class='champs'>Age : </p>
+              </div>
+              <div class='col-6'>
+                  <p class='champs'>{{object.get_age}} ans</p>
+              </div>
           </div>
-          <div class='col-8'>
-            <p>{{object.patient_note}} </p>
+          {% endif %}
+          {% if object.patient_situation %}
+          <div class='row tab-text'>
+              <div class='col-6 col-sm-5'>
+                  <p class='champs'>Situation personelle : </p>
+              </div>
+              <div class='col-6'>
+                  <p class='champs'>{{object.patient_situation}}</p>
+              </div>
+          </div>
+          {% endif %}
+          {% if object.patient_job %}
+          <div class='row tab-text'>
+              <div class='col-6 col-sm-5'>
+                  <p class='champs'>Profession : </p>
+              </div>
+              <div class='col-6'>
+                  <p class='champs'>{{object.patient_job}}</p>
+              </div>
+          </div>
+          {% endif %}
+          </br>
+
+          <div class='row tab-text'>
+              <div class='col-6 col-sm-5'>
+                  <p class='champs'>Téléphone : </p>
+              </div>
+              <div class='col-6'>
+                  <a href="tel:+33{{patient.get_call_number}}"><p class='champs'>{{object.get_printable_number}}</p></a>
+              </div>
+          </div>
+          </br>
+
+          {% if object.get_adress %}
+          <div class='row tab-text'>
+              <div class='col-6 col-sm-5'>
+                  <p class='champs'>Adresse : </p>
+              </div>
+              <div class='col-6'>
+                  <p class='champs'>{{object.get_adress}}</p>
+              </div>
+          </div>
+          {% endif %}
+          </br>
+          <hr class="featurette-divider">
+          <div class='row'>
+              <div class='col-12 pt-4 pb-2'>
+                  <h3 class="tab-main-title"><b><u>Suivi médical :</u></b></h3>
+              </div>
+          </div>
+          {% if object.patient_gyn %}
+          <div class='row tab-text'>
+              <div class='col-6 col-sm-5'>
+                  <p class='champs'>Gynécologue : </p>
+              </div>
+              <div class='col-6'>
+                  <p class='champs'>{{object.patient_gyn}}</p>
+              </div>
+          </div>
+          {% endif %}
+          {% if object.patient_med %}
+          <div class='row tab-text'>
+              <div class='col-6 col-sm-5'>
+                  <p class='champs'>Médecin traitant : </p>
+              </div>
+              <div class='col-6'>
+                  <p class='champs'>{{object.patient_med}}</p>
+              </div>
           </div>
           {% endif %}
       </div>

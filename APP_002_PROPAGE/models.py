@@ -3,6 +3,8 @@ from django.core.urlresolvers import reverse
 from django.db import models
 from django.db.models.signals import pre_save
 
+from datetime import date
+
 from APP_001_CLIENTPAGE.utils import unique_slug_generator
 
 class Patient(models.Model):
@@ -11,6 +13,18 @@ class Patient(models.Model):
     patient_maiden_name        = models.CharField(max_length=120,verbose_name="Nom de jeune fille", null=True, blank=True)
     patient_birthday           = models.DateTimeField(null=True,blank=True)
 
+    # Situation personnelle
+    SITUATIONS                 = (
+                                  ("Célibataire","Célibataire"),
+                                  ("En couple","En couple"),
+                                  ("Mariée","Mariée")
+                                  )
+    patient_situation          = models.CharField(max_length=100,choices=SITUATIONS, default="Célibataire", verbose_name="Situation familiale",null=True, blank=True)
+
+    #Profession
+    patient_job                = models.CharField(max_length=120,verbose_name="Profession", null=True, blank=True)
+
+    # Téléphone
     phone_regex                = RegexValidator(regex=r'^0\d{9}$', message='Phone number must be like 06XXXXXXXX')
     patient_phone_number       = models.CharField(validators=[phone_regex], max_length=10, verbose_name="Téléphone")
 
@@ -20,13 +34,8 @@ class Patient(models.Model):
     patient_city               = models.CharField(max_length=64, verbose_name="Ville", null=True, blank=True)
     patient_contry             = models.CharField(max_length=64, default="France", verbose_name="Pays",null=True, blank=True)
 
-    SITUATIONS                 = (
-                                  ("celibataire","Célibataire"),
-                                  ("en_couple","En couple"),
-                                  ("mariee","Mariée")
-                                  )
-    patient_situation          = models.CharField(max_length=100,choices=SITUATIONS, default="celibataire", verbose_name="Situation familiale",null=True, blank=True)
-    patient_job                = models.CharField(max_length=120,verbose_name="Profession", null=True, blank=True)
+
+    # Suivi médical
     patient_gyn                = models.CharField(max_length=200,verbose_name="Gynécologue", null=True, blank=True)
     patient_med                = models.CharField(max_length=200,verbose_name="Médecin traitant", null=True, blank=True)
 
@@ -68,20 +77,31 @@ class Patient(models.Model):
     def __str__(self):
         return self.patient_first_name + ' ' + self.patient_last_name
 
-    def call_number(self):
-        number = self.patient_phone_number
-        return number[1:]
-
     def get_absolute_url(self):
         return reverse("propage:patient-details", kwargs={'slug': self.slug})
 
     def get_adress(self):
-        return self.patient_address + ", " + self.patient_zip_code + " " + self.patient_city + " - " + self.patient_contry
+        """ Return a stylish adress"""
+        try:
+            return self.patient_address + ", " + self.patient_zip_code + " " + self.patient_city + " - " + self.patient_contry
+        except:
+            pass
+
+    def get_age(self):
+        """ Return age from birth date"""
+        today = date.today()
+        return today.year - self.patient_birthday.year - ((today.month, today.day) < (self.patient_birthday.month, self.patient_birthday.day))
+
+    def get_call_number(self):
+        """ Get the number in order to be able to call it with a link """
+        number = self.patient_phone_number
+        return number[1:]
 
     def get_imc(self):
         return self.patient_poid / (self.patient_taille*self.patient_taille)
 
-    def printable_number(self):
+    def get_printable_number(self):
+        """ Get the number with dot style between two numbers"""
         number = self.patient_phone_number
         txt=""
         for i in range(len(number)):
